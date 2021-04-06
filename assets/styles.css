@@ -148,11 +148,12 @@
     "Segoe UI Symbol";
 }
 .notion-page-cover {
-  display: block;
+  /* display: block; */
+  display: none;
   object-fit: cover;
   width: 100%;
-  height: 30vh;
-  min-height: 30vh;
+  height: auto;
+  max-height: 30vh;
   padding: 0;
 }
 
@@ -173,14 +174,16 @@
 }
 
 .notion-page-offset {
-  margin-top: 96px;
+  /* margin-top: 96px; */
+  margin-top: 0px;
 }
 
 span.notion-page-icon-cover {
   height: 78px;
   width: 78px;
   font-size: 78px;
-  display: inline-block;
+  /* display: inline-block; */
+  display: none;
   line-height: 1.1;
   margin-left: 0px;
 }
@@ -238,7 +241,8 @@ img.notion-page-icon-offset {
 }
 .notion-page-link {
   display: flex;
-  color: rgb(55, 53, 47);
+  /* color: rgb(55, 53, 47); */
+  color: rgb(209, 202, 179);
   text-decoration: none;
   height: 30px;
   margin: 1px 0px;
@@ -265,7 +269,8 @@ img.notion-page-icon {
   display: block;
   width: 18px;
   height: 18px;
-  color: rgba(55, 53, 47, 0.4);
+  /* color: rgba(55, 53, 47, 0.4); */
+  color: rgba(204, 197, 174, 0.4);
 }
 
 .notion-page-text {
@@ -349,7 +354,8 @@ img.notion-page-icon {
 
 .notion-text {
   white-space: pre-wrap;
-  caret-color: rgb(55, 53, 47);
+  /* caret-color: rgb(55, 53, 47); */
+  caret-color: rgb(216, 208, 183);
   padding: 3px 2px;
 }
 .notion-block {
@@ -412,7 +418,8 @@ img.notion-page-icon {
   padding: 12px 14px 14px;
   overflow: hidden;
   text-align: left;
-  color: rgb(55, 53, 47);
+  /* color: rgb(55, 53, 47); */
+  color: rgb(201, 194, 172);
 }
 
 .notion-bookmark-title {
@@ -448,7 +455,8 @@ img.notion-page-icon {
 .notion-bookmark-link > div {
   font-size: 12px;
   line-height: 16px;
-  color: rgb(55, 53, 47);
+  /* color: rgb(55, 53, 47); */
+  color: rgb(206, 199, 177);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -504,10 +512,12 @@ img.notion-page-icon {
   padding: 6px 0px;
   white-space: pre-wrap;
   word-break: break-word;
-  caret-color: rgb(55, 53, 47);
+  /* caret-color: rgb(55, 53, 47); */
+  caret-color: rgb(201, 194, 173);
   font-size: 14px;
   line-height: 1.4;
-  color: rgba(55, 53, 47, 0.6);
+  /* color: rgba(55, 53, 47, 0.6); */
+  color: rgba(207, 200, 178, 0.6);
 }
 
 .notion-callout {
@@ -566,7 +576,8 @@ img.notion-page-icon {
 }
 
 .notion-th {
-  color: rgba(55, 53, 47, 0.6);
+  /* color: rgba(55, 53, 47, 0.6); */
+  color: rgba(209, 202, 180, 0.6);
   font-size: 14px;
 }
 
@@ -613,7 +624,8 @@ img.notion-page-icon {
 .notion-gallery-data.is-first {
   white-space: nowrap;
   word-break: break-word;
-  caret-color: rgb(55, 53, 47);
+  /* caret-color: rgb(55, 53, 47); */
+  caret-color: rgb(206, 199, 178);
   font-size: 14px;
   line-height: 1.5;
   min-height: 21px;
@@ -659,7 +671,8 @@ img.notion-page-icon {
   justify-content: center;
   white-space: nowrap;
 
-  color: rgb(55, 53, 47);
+  /* color: rgb(55, 53, 47); */
+  color: rgb(209, 201, 178);
   text-decoration: none;
   margin: 1px 0px;
   padding: 4px 6px;
@@ -679,15 +692,18 @@ img.notion-nav-icon {
   font-size: 18px;
   margin-right: 6px;
   line-height: 1.1;
-  color: #000;
+  /* color: #000; */
+  color: rgb(255, 255, 255);
 }
 
 .notion-nav-breadcrumb:not(.notion-nav-breadcrumb-active):hover {
-  background: rgba(55, 53, 47, 0.08);
+  /* background: rgba(55, 53, 47, 0.08); */
+  background: rgba(223, 215, 191, 0.08);
 }
 
 .notion-nav-breadcrumb:not(.notion-nav-breadcrumb-active):active {
-  background: rgba(55, 53, 47, 0.16);
+  /* background: rgba(55, 53, 47, 0.16); */
+  background: rgba(209, 202, 179, 0.16);
 }
 
 .notion-nav-breadcrumb.notion-nav-breadcrumb-active {
@@ -696,5 +712,6 @@ img.notion-nav-icon {
 
 .notion-nav-spacer {
   margin: 0 2px;
-  color: rgba(55, 53, 47, 0.4);
+  /* color: rgba(55, 53, 47, 0.4); */
+  color: rgba(209, 202, 179, 0.4);
 }

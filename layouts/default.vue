@@ -5,10 +5,10 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  /* font-size: 1.25rem; */
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -86,7 +86,6 @@ html {
 }
 
 .posts {
-  text-align: left;
   max-width: 35rem;
   /* prevents the width from being 100% on mobile / smaller screens */
   width: 95%;
