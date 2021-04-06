@@ -46,6 +46,7 @@
           <NuxtLink class="button--green" to="/example">
             Post via slug <i>(e.g. /example)</i>
           </NuxtLink>
+           <NuxtLink class="button--green" to="/table">Table</NuxtLink>
         </div>
       </div>
       <h2>Example Notion Playground Pages</h2>

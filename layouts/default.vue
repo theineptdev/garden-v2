@@ -9,12 +9,20 @@ html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  /* solves mobile scaling issue, but still don't know the cause... */
+  overflow-x: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Edge, Opera and Firefox */
 }
 
 *,
@@ -22,6 +30,10 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .button--green {
@@ -56,48 +68,39 @@ html {
 }
 
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  max-width: 90%;
-  padding: 4em 0.5em;
-  display: block;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
   text-align: center;
 }
 
 .logo {
-  max-width: 100%;
-  padding: 0.5em;
 }
 
 .nav a {
-  color: #333 !important;
 }
 
 .links {
-  padding: 1em 0 1.5em 0;
 }
 
 .posts {
-  margin: 1em;
   text-align: left;
+  max-width: 35rem;
+  /* prevents the width from being 100% on mobile / smaller screens */
+  width: 95%;
 }
 
 .container h2 {
-  margin-top: 1.5em;
 }
 
 .container ul {
-  margin: 1em auto;
-  list-style: none;
 }
 
 .container p {
-  margin: 0.75em 0;
 }
 
 .container a {
-  max-width: 75%;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
