@@ -74,7 +74,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     /* smooth transitions for elements within container */

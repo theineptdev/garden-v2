@@ -1,10 +1,13 @@
 <template>
+  <div>
+  <NuxtLink class="home-btn" to="/" title="Home"></NuxtLink>
   <NotionRenderer
     :blockMap="blockMap"
     :pageLinkOptions="pageLinkOptions"
     fullPage
     prism
   />
+  </div>
 </template>
 
 <script>
@@ -40,5 +43,32 @@ export default {
 * {
   height: 100vh;
   background: #181818;
+}
+
+.home-btn {
+  background: transparent;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  top: 4.75rem;
+  right: 5%;
+  content: url('../components/gardenLogoInvFullNoFlipHollow.png');
+  filter: grayscale(1) brightness(2);
+  opacity: 0.25;
+  transition: 0.15s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-btn {
+    top: 4.5rem;
+    right: 6em; 
+  }
+  .home-btn:hover {
+    background: transparent;
+    filter: grayscale(0) brightness(1);
+    opacity: 1;
+  }
 }
 </style>
