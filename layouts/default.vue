@@ -26,46 +26,8 @@ html {
                         supported by Chrome, Edge, Opera and Firefox */
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 ::-webkit-scrollbar {
   display: none;
-}
-
-.button--green {
-  display: inline-block;
-  margin: 0.25em;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  margin: 0.25em;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
 }
 
 .container {
@@ -76,28 +38,10 @@ html {
   text-align: center;
 }
 
-.logo {
-}
-
-.nav a {
-}
-
-.links {
-}
-
 .posts {
   max-width: 35rem;
   /* prevents the width from being 100% on mobile / smaller screens */
   width: 95%;
-}
-
-.container h2 {
-}
-
-.container ul {
-}
-
-.container p {
 }
 
 .container a {

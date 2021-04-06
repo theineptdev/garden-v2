@@ -1,63 +1,153 @@
 <template>
   <div class="container">
-    <div class="content">
-      <img
-        src="https://github.com/janniks/vue-notion/raw/main/docs/img/vue-notion.png"
-        alt="vue-notion"
-        width="272px"
-        class="logo"
-      />
-      <p>An unofficial Notion renderer</p>
-
-      <h3 class="nav">
-        <a target="_blank" href="https://github.com/janniks/vue-notion#features"
-          >Features</a
-        >
-        <span> · </span>
-        <a target="_blank" href="https://github.com/janniks/vue-notion#install"
-          >Install</a
-        >
-        <span> · </span>
-        <a
-          target="_blank"
-          href="https://github.com/janniks/vue-notion#basic-example"
-          >Example</a
-        >
-        <span> · </span>
-        <a target="_blank" href="https://github.com/janniks/vue-notion#docs"
-          >Docs</a
-        >
-        <span> · </span>
-        <a target="_blank" href="https://github.com/janniks/vue-notion#credits"
-          >Credits</a
-        >
-      </h3>
-
-      <h2>Example from README</h2>
-      <div class="links">
-        <NuxtLink class="button--green" to="/nuxt">Basic Example</NuxtLink>
+    <div class="posts">
+        <div class="title">Digital Garden</div>
+        <ul>
+          <div v-for="(post, k) in posts" :key="k">
+            <NuxtLink v-if="post.slug" :to="post.slug" class="post">
+                {{ test(post) }}
+              <div class="title-tags-date">
+                  <div class="post-title">
+                    {{ post.title }}
+                  </div>
+                  <div v-for="(tags, i) in posts" :key="i" class="tags">
+                    {{ post.tags[i] }}
+                  </div>
+                  <div class="date">
+                    {{ post.date }}
+                  </div>
+              </div>
+              <div class="preview">
+                {{ post.preview }}
+              </div>
+            </NuxtLink>
+          </div>
+        </ul>
       </div>
-
-      <h2>Static Generated Examples</h2>
-      <div class="links">
-        <p>Blog-style Examples (use Notion as a CMS for Nuxt)</p>
-        <div class="links">
-          <NuxtLink class="button--green" to="/posts">All Blog Posts</NuxtLink>
-          <NuxtLink class="button--green" to="/example">
-            Post via slug <i>(e.g. /example)</i>
-          </NuxtLink>
-           <NuxtLink class="button--green" to="/table">Table</NuxtLink>
-        </div>
-      </div>
-      <h2>Example Notion Playground Pages</h2>
-      <div class="links">
-        <NuxtLink class="button--grey" to="/2e22de6b770e4166be301490f6ffd420">
-          react-notion tester
-        </NuxtLink>
-        <NuxtLink class="button--grey" to="/067dd719a912471ea9a3ac10710e7fdf">
-          react-notion-x tester
-        </NuxtLink>
-      </div>
-    </div>
   </div>
 </template>
+
+<script>
+export default {
+  async asyncData({ $notion, params, error }) {
+    const pageTable = await $notion.getPageTable("a3f68b3e03c84a44ab166c74bd723633");
+
+    // sort published pages
+    const posts = pageTable
+      .filter((page) => page.published)
+      .sort((a, b) => a.date - b.date);
+
+    // convert array of pages to a map of tags with page arrays
+    const postsByTag = pageTable
+      .filter((page) => page.published)
+      .reduce((map, currentPage) => {
+        currentPage.tags.forEach((tag) =>
+          map.has(tag)
+            ? map.set(tag, [...map.get(tag), currentPage])
+            : map.set(tag, [currentPage])
+        );
+        return map;
+      }, new Map());
+
+    return {
+      posts,
+      postsByTag,
+      tags: [...postsByTag.keys()].sort(),
+    };
+  },
+  methods: {
+    test(apple) {
+        // console.log(apple);
+        // console.log("test");
+    }
+  }
+};
+</script>
+
+<style scoped>
+.container {
+    /* border: 1px solid red; */
+    color: white;
+    background: #181818;
+    height: auto;
+    max-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    /* smooth transitions for elements within container */
+    transition: 0.25s ease-in-out;
+}
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    /* 4.5rem originally */
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+.post {
+    border: .01px solid rgba(0, 0, 255, 0);
+    text-decoration: none;
+    margin: 0 auto;
+    max-width: 35rem;
+    /* prevents the width from being 100% on mobile / smaller screens */
+    width: 95%;
+    /* padding-bottom was 2.5rem */
+    padding-bottom: 2rem;
+    line-height: 2rem;
+    cursor: pointer;
+}
+.title-date {
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: row;
+}
+.post-title {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.75rem;
+    text-transform: lowercase;
+    display: inline-flex;
+    padding-right: 0.25rem;
+    overflow-y: hidden;
+}
+.tags {
+    text-decoration: none;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    color: rgb(126, 126, 126);
+    display: inline-flex;
+    padding-left: 0.25rem;
+}
+.date {
+    text-decoration: none;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    color: rgb(56, 56, 56);
+    display: inline-flex;
+    padding-left: 0.25rem;
+}
+.preview {
+    /* border: 1px solid red; */
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: rgb(90, 90, 90);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 6rem;
+}
+@media only screen and (min-width: 768px) {
+    .post:hover :is(.post-title, .tags, .date, .preview) {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .post:hover .tags {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .post:hover .date {
+        color: rgba(255, 255, 255, 0.3);
+    }
+}
+</style>
