@@ -18,3 +18,5 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## figma
+https://www.figma.com/file/ZTw24SPPBpMJmLBS43bU6K/ineptBlog
