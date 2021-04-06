@@ -8,7 +8,7 @@ export default {
   async asyncData({ $notion }) {
     // use Notion module to get Notion blocks from the API via a Notion pageId
     const blockMap = await $notion.getPageBlocks(
-      "8c1ab01960b049f6a282dda64a94afc7"
+      "a3f68b3e03c84a44ab166c74bd723633"
     );
     return { blockMap };
   },

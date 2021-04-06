@@ -37,7 +37,7 @@
 <script>
 export default {
   async asyncData({ $notion, params, error }) {
-    const pageTable = await $notion.getPageTable("10327f9074b7433aad577ccd0020e971");
+    const pageTable = await $notion.getPageTable("a3f68b3e03c84a44ab166c74bd723633");
 
     // sort published pages
     const posts = pageTable
