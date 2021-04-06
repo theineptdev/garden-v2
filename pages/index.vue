@@ -70,7 +70,7 @@ export default {
     color: white;
     background: #181818;
     height: auto;
-    max-height: 100vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;

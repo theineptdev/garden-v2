@@ -56,7 +56,8 @@ export default {
   right: 5%;
   content: url('../components/gardenLogoInvFullNoFlipHollow.png');
   filter: grayscale(1) brightness(2);
-  opacity: 0.25;
+  opacity: 0.3;
+  mix-blend-mode: difference;
   transition: 0.15s ease-in-out;
 }
 
@@ -67,6 +68,7 @@ export default {
   }
   .home-btn:hover {
     background: transparent;
+    mix-blend-mode: unset;
     filter: grayscale(0) brightness(1);
     opacity: 1;
   }
