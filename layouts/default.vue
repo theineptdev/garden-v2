@@ -14,6 +14,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: #181818;
   /* solves mobile scaling issue, but still don't know the cause... */
   overflow-x: hidden;
   -webkit-touch-callout: none; /* iOS Safari */

@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .notion {
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 1.25rem;
   line-height: 1.5;
-  color: rgb(55, 53, 47);
-  caret-color: rgb(55, 53, 47);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  color: rgb(195, 195, 195);
+  caret-color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .notion > *,
@@ -16,6 +16,7 @@
 
 .notion * {
   box-sizing: border-box;
+  margin: 0 auto;
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
@@ -107,10 +108,16 @@
 }
 
 .notion-title {
-  font-size: 2.5em;
-  font-weight: 700;
+  /* font-size: 2.5em;
   margin-top: 0.75em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.25em; */
+  text-transform: uppercase;
+  color: white;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  /* 4.5rem originally */
+  padding-top: 4rem;
+  padding-bottom: 3rem;
 }
 
 .notion-h1,
@@ -152,8 +159,11 @@
 .notion-page {
   padding: 0;
   margin: 0 auto;
-  max-width: 708px;
-  width: 100%;
+  /* max-width: 708px;
+  width: 100%; */
+  max-width: 35rem;
+  /* prevents the width from being 100% on mobile / smaller screens */
+  width: 95%
 }
 
 @media only screen and (max-width: 730px) {
@@ -209,9 +219,10 @@ img.notion-page-icon-offset {
 .notion-hr {
   margin: 6px 0px;
   padding: 0;
+  border-width: 0;
   border-top-width: 1px;
-  border-bottom-width: 0;
-  border-color: rgba(55, 53, 47, 0.09);
+  /* border-color: rgba(55, 53, 47, 0.09); */
+  border-color: rgb(156, 156, 156);
 }
 .notion-link {
   color: inherit;

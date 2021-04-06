@@ -57,8 +57,8 @@ export default {
   },
   methods: {
     test(apple) {
-        console.log(apple);
-        console.log("test");
+        // console.log(apple);
+        // console.log("test");
     }
   }
 };
@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     color: white;
     background: #181818;
     height: auto;
@@ -89,7 +89,8 @@ export default {
     padding-bottom: 3rem;
 }
 .post {
-    border: 1px solid blue;
+    border: .01px solid rgba(0, 0, 255, 0);
+    text-decoration: none;
     margin: 0 auto;
     max-width: 35rem;
     /* prevents the width from being 100% on mobile / smaller screens */
@@ -98,10 +99,9 @@ export default {
     padding-bottom: 2rem;
     line-height: 2rem;
     cursor: pointer;
-    text-decoration: none;
 }
 .title-date {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     display: flex;
     flex-direction: row;
 }
@@ -131,7 +131,7 @@ export default {
     padding-left: 0.25rem;
 }
 .preview {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     text-decoration: none;
     font-size: 1.25rem;
     color: rgb(90, 90, 90);

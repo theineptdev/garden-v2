@@ -35,3 +35,10 @@ export default {
 <style>
 @import "../assets/styles.css";
 </style>
+
+<style scoped>
+* {
+  height: 100vh;
+  background: #181818;
+}
+</style>
