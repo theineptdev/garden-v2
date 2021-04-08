@@ -1,22 +1,16 @@
-# garden-v2
+# [digital garden](https://garden.theinept.dev/)
 
-## Build Setup
+The second iteration of [my digital garden](https://garden.theinept.dev/).
 
-```bash
-# install dependencies
-$ npm install
+Created to control the site styling while using [Notion](https://www.notion.so/) as the CMS.
+# Screenshots
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+<p float="left">
+  <img src="assets/screenshots/blog.png" width="400">
+  <img src="assets/screenshots/post.png" width="400">
+</p>
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+# Technology
 
-# generate static project
-$ npm run generate
-```
+Planned with [Figma](https://www.figma.com/file/ZTw24SPPBpMJmLBS43bU6K/ineptBlog) and developed using [Nuxt.js](https://nuxtjs.org/), splitbee's [notion-api-worker](https://github.com/splitbee/notion-api-worker), and janniks's [vue-notion](https://github.com/janniks/vue-notion) renderer.
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-## figma
-https://www.figma.com/file/ZTw24SPPBpMJmLBS43bU6K/ineptBlog
