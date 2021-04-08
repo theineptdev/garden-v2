@@ -5,9 +5,9 @@ The second iteration of [my digital garden](https://garden.theinept.dev/).
 Created to control the site styling while using [Notion](https://www.notion.so/) as the CMS.
 # Screenshots
 
-<p float="left">
-  <img src="assets/screenshots/blog.png" width="400">
-  <img src="assets/screenshots/post.png" width="400">
+<p align="center">
+  <img src="assets/screenshots/blog.png" width="49%">
+  <img src="assets/screenshots/post.png" width="49%">
 </p>
 
 # Technology
